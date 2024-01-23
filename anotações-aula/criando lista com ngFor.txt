@@ -1,0 +1,98 @@
+Para criar uma lista dinâmica:
+
+ETAPA ARQUIVO TypeScript:
+
+No arquivo TS criar um component, e adicionar os 
+itens da lista no construtor(){} 
+começando com this.nome-do-component = ["itens da lista", "separados por vírgula"];
+
+EXEMPLO:
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
+})
+export class CardComponent implements OnInit {
+
+  produtos:string[] = []
+
+  constructor() {
+    this.produtos = [
+      "mouse",
+      "teclado",
+      "cabo",
+      "fonte"
+    ]
+  }
+
+  ngOnInit(): void {
+  }
+
+}
+
+--------------------------------------------------------------
+ETAPA ARQUIVO HTML:
+
+No arquivo HTML criar as tags ul e li e acrecentar 
+*ngFor="let p for nome-do-component-criado-no-arquivo-TS":
+
+<ul>
+   <li *ngFor="let p of nome-do-component-criado-no-arquivo-TS">{{ p }}</li>
+</ul>;
+
+EXEMPLO:
+
+<ul>
+  <li *ngFor="let p of produtos">{{ p }}</li>
+</ul>
+
+===============================================================
+ngFor com Index:
+
+ETAPA ARQUIVO TypeScript:
+
+Criar um método e adicionar a especificação (index: number); 
+
+EXEMPLO:
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
+})
+export class CardComponent implements OnInit {
+
+  produtos:string[] = []
+
+  constructor() {
+    this.produtos = [
+      "mouse",
+      "teclado",
+      "cabo",
+      "fonte"
+    ]
+  }
+
+  ngOnInit(): void {
+  }
+
+  remover(index: number) {
+     this.produtos.splice(index, 1)
+  }
+
+}
+
+------------------------------------------------------------
+ETAPA ARQUIVO HTML:
+
+adicionar "let i = index" (click)="remover(i)" e adicionar {{ i }}
+
+<ul>
+   <li *ngFor="let i = index"(click)="remover(i)">{{ i }}</li>
+</ul>;
+

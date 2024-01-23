@@ -1,0 +1,21 @@
+==============================================================
+				ngContent
+==============================================================
+- No arquivo html principal terá a tag principal onde é colocada as informações;
+
+EXEMPLO: 
+
+<app-comp-atributos>
+  <h2>Olá</h2>
+  <p>Eu vim de fora.</p>
+</app-comp-atributos>
+
+--------------------------------------------------------------
+- No arquivo hmtl secundário terá a tag <ng-content> com um seletor e a opção
+que deseja trabalhar no HTML principal;
+
+EXEMPLO: 
+
+<ng-content select="h2"></ng-content>
+
+<ng-content select="p"></ng-content>

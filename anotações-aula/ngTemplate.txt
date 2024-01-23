@@ -1,0 +1,34 @@
+========================================================
+			ngTemplate
+========================================================
+- No arquivo HTML criar a tag <ng-template> dentro da tag colocar o [ngIf]
+seguido da propriedade criada no arquivo TS;
+
+EXEMPLO:
+
+<ng-template [ngIf]="isEnableBlock">
+  <a href="#">FINALIZAR COMPRA</a>
+</ng-template>
+
+--------------------------------------------------------
+- No arquivo TS criar uma propriedade que será utilizada no arquivo HTML;
+
+EXEMPLO: 
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-comp-atributos',
+  templateUrl: './comp-atributos.component.html',
+  styleUrls: ['./comp-atributos.component.css']
+})
+export class CompAtributosComponent implements OnInit {
+
+//Propriedade
+
+  isEnableBlock:boolean = true
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }

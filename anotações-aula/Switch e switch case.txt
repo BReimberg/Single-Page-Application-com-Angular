@@ -1,0 +1,55 @@
+Switch e Switch Case
+
+ETAPA TypeScript:
+
+- Criar um component e adicionar a opção que deseja mostrar na tela;
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css']
+})
+export class CardComponent implements OnInit {
+
+  menuType:string = "superuser"
+
+----------------------------------------------------------------------
+ETAPA HTML:
+
+- Criar uma div com [ngSwitch] e o nome do component criado no arquivo TS;
+- Criar outras divs com *ngSwitchCase="'nome da opção'"
+- criar listas com as opções que deseja utilizar.
+
+EXEMPLO:
+
+<div [ngSwitch]="menuType">
+  <div *ngSwitchCase="'user'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'admin'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuários</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'superuser'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuários</li>
+      <li>gerenciar admins</li>
+    </ul>
+
+    <!-- ngSwitDefault, menuType:string = ""
+      não for encontrada, retorna a opção que
+      estiver no Default
+    -->
+
+  </div>
+</div>

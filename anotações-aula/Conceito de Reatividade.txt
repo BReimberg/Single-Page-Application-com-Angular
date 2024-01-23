@@ -1,0 +1,25 @@
+REATIVIDADE:
+
+No arquivo TypeScript:
+- Criar um método: 
+
+Exemplo: 
+
+adicionar(){}
+
+- Adicionar um outro item na lista utilizando o push:
+
+Exemplo:
+
+adicionar() {
+   this.nome-do-component-criado.push("item");
+}
+
+----------------------------------------------------------
+No arquivo HTML:
+
+- Criar uma tag button com o evento click e o métododo criado no arquivo TS:
+
+Exemplo: 
+
+<button (click)="adicionar()">Adicionar</button>

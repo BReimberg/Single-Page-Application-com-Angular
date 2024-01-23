@@ -1,4 +1,36 @@
-# DiretivasProj
+# Módulo Explorando o Angular Framework
+
+## Aula: Single Page Application com Angular
+
+## Conteúdo:
+
+### Introdução
+- O que são diretivas?
+- Preparando o projeto
+- Criando Component
+
+### Diretivas Estruturais
+- ngIf
+- ngIf com Data biding
+- ngIf com ngTemplate
+- ngFor laço de repetição em componentes
+- Conceito de reatividade
+- ngFor com index
+- Switch e Switch Case
+
+### Diretivas de Atributo
+- ngClass
+- ngStyle
+- ngModel
+- ngTemplate
+- ngContent
+
+### Observação
+Na pasta anotações-aula estão separados alguns NGs.
+
+================================================================================================
+
+## DiretivasProj
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
 

@@ -1,0 +1,77 @@
+======================================================================
+				ngClass
+======================================================================
+- NO ARQUIVO CSS, CRIAR UMA CLASSE
+
+EXEMPLO:
+
+.enable {
+  color: blue;
+}
+
+.disable {
+  color: red;
+}
+
+----------------------------------------------------------------------
+- NO ARQUIVO TS, CRIAR UMA PROPRIEDADE
+
+EXEMPLO: 
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-comp-atributos',
+  templateUrl: './comp-atributos.component.html',
+  styleUrls: ['./comp-atributos.component.css']
+})
+export class CompAtributosComponent implements OnInit {
+
+  estilo:string = "disable"
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+- CRIAR UM MÉTODO PARA O EVENTO COM CLICK, ESPECIFICADO NO ARQUIVO HTML
+
+EXEMPLO: 
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-comp-atributos',
+  templateUrl: './comp-atributos.component.html',
+  styleUrls: ['./comp-atributos.component.css']
+})
+export class CompAtributosComponent implements OnInit {
+
+  estilo:string = "disable"
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  trocar(){
+    if(this.estilo === "disable") {
+      this.estilo = "enable"
+    } else {
+      this.estilo = "disable"
+    }
+  }
+}
+----------------------------------------------------------------------
+- NO ARQUIVO HTMl, ADICIONAR [ngClass]="nome da propriedade criada no arquivo TS"
+
+EXEMPLO:
+
+<p [ngClass]="estilo">comp-atributos works!</p>
+
+----------------------------------------------------------------------
+- CRIAR UM BUTTON COM O EVENTO (click)="método criado no arquivo TS()"
+
+EXEMPLO:
+
+<button (click)="trocar()">Trocar</button>
